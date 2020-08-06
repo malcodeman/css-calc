@@ -61,6 +61,13 @@ function App() {
     setPx(value * Number(rootFontSize));
   }
 
+  function handleRootFontSizeOnChange(e) {
+    const value = e.target.value;
+
+    setRootFontSize(value);
+    setRem(px / Number(value));
+  }
+
   return (
     <ThemeProvider theme={darkTheme ? DarkTheme : LightTheme}>
       <Wrapper bg={darkTheme ? "#000" : "#fff"}>
@@ -81,7 +88,7 @@ function App() {
             <Input
               type="text"
               value={rootFontSize}
-              onChange={(e) => setRootFontSize(e.target.value)}
+              onChange={handleRootFontSizeOnChange}
             />
           </div>
         </Main>
