@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "deploy": "yarn build && mv dist/index.html dist/200.html && surge dist csscalc.surge.sh"
   },
   "author": "malcodeman",
   "license": "MIT",
