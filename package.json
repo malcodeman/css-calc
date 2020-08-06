@@ -12,7 +12,10 @@
     "parcel": "^2.0.0-beta.1"
   },
   "dependencies": {
+    "malcomponents": "^2.0.2",
+    "malhooks": "^1.1.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   }
 }
