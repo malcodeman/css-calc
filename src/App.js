@@ -16,8 +16,8 @@ import constants from "./constants";
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  background-color: ${(props) => props.bg};
   height: 100vh;
+  background-color: ${(props) => props.theme.malcode.colors.background};
   @media (min-width: ${constants.BREAKPOINTS.MEDIUM_DEVICES}) {
     align-items: center;
   }
@@ -70,7 +70,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme ? DarkTheme : LightTheme}>
-      <Wrapper bg={darkTheme ? "#000" : "#fff"}>
+      <Wrapper>
         <Main>
           <Title>CSS calc</Title>
           <Inputs>
