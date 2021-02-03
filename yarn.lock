@@ -3959,10 +3959,10 @@ lowlight@~1.9.0:
     fault "^1.0.2"
     highlight.js "~9.12.0"
 
-malcomponents@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/malcomponents/-/malcomponents-2.0.2.tgz#470e768b621b3c753d613ba7592e32c7a4ab766c"
-  integrity sha512-hwW+k+yaAJzYx4kWAn0K23DAQrJhNkzyXGm132woZc8Id/LW7o9uN7ET5DLXeiMnjtf/HSwhdxOHVZ8GEh+cGg==
+malcomponents@^2.0.13:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/malcomponents/-/malcomponents-2.0.13.tgz#32580ef07289b3dd4fe0767df946590d81eb99a2"
+  integrity sha512-ltrxOWBdmLKIyB+52F3GqrtT4KnRPq18g6Z/MV0cflJROBX//GpZpq2hCj9+UP1mGw6jn/l2XSwJO1MPTSbceA==
 
 malhooks@^1.1.1:
   version "1.1.1"

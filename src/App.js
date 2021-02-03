@@ -1,16 +1,16 @@
 import React from "react";
 import {
   Input,
-  ParagraphMedium,
   ThemeProvider,
   DarkTheme,
   LightTheme,
-  HeadingLarge,
+  Typography,
+  GlobalStyle,
+  FormControl,
 } from "malcomponents";
 import { usePreferredTheme } from "malhooks";
 import styled from "styled-components";
 
-import GlobalStyle from "./GlobalStyle";
 import constants from "./constants";
 
 const Wrapper = styled.div`
@@ -28,10 +28,6 @@ const Main = styled.main`
   flex-direction: column;
   text-align: center;
   padding: 2rem;
-`;
-
-const Title = styled(HeadingLarge)`
-  margin-bottom: 2rem;
 `;
 
 const Inputs = styled.div`
@@ -72,25 +68,22 @@ function App() {
     <ThemeProvider theme={darkTheme ? DarkTheme : LightTheme}>
       <Wrapper>
         <Main>
-          <Title>CSS calc</Title>
+          <Typography.HeadingLarge mb="2rem">CSS calc</Typography.HeadingLarge>
           <Inputs>
-            <div>
-              <ParagraphMedium>px</ParagraphMedium>
+            <FormControl label="px">
               <Input type="text" value={px} onChange={handlePxOnChange} />
-            </div>
-            <div>
-              <ParagraphMedium>rem</ParagraphMedium>
+            </FormControl>
+            <FormControl label="rem">
               <Input type="text" value={rem} onChange={handleRemOnChange} />
-            </div>
+            </FormControl>
           </Inputs>
-          <div>
-            <ParagraphMedium>root font size</ParagraphMedium>
+          <FormControl label="root font size">
             <Input
               type="text"
               value={rootFontSize}
               onChange={handleRootFontSizeOnChange}
             />
-          </div>
+          </FormControl>
         </Main>
       </Wrapper>
       <GlobalStyle />
