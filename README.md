@@ -6,7 +6,7 @@
 
 Simple unit conversion tool.
 
-![Screenshot](docs/images/screenshot.png)
+![Screenshot](readme/screenshot.png)
 
 ## Getting started
 
