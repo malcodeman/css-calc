@@ -7,8 +7,8 @@ class MyDocument extends Document {
   static getInitialProps = getInitialProps;
   render() {
     return (
-      <Html>
-        <Head lang="en">
+      <Html lang="en">
+        <Head>
           <meta charSet="utf-8" />
           <meta
             name="og:description"
