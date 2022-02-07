@@ -1,9 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
-import { Container, Title } from "@mantine/core";
+import { Center, Container, List, ListItem, Title } from "@mantine/core";
+import { map } from "ramda";
 
-import PxToRem from "../components/PxToRem";
+const LIST = [
+  {
+    label: "Pixel to REM",
+    value: "/px-to-rem-converter",
+  },
+  {
+    label: "REM to Pixel",
+    value: "/rem-to-px-converter",
+  },
+];
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +26,18 @@ const Home: NextPage = () => {
         <Title order={1} align={"center"} mb={"lg"}>
           CSS calc
         </Title>
-        <PxToRem />
+        <Center>
+          <List>
+            {map(
+              (item) => (
+                <ListItem key={item.value}>
+                  <Link href={item.value}>{item.label}</Link>
+                </ListItem>
+              ),
+              LIST
+            )}
+          </List>
+        </Center>
       </Container>
     </React.Fragment>
   );
