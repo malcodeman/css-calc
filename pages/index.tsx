@@ -2,7 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import { Center, Container, List, ListItem, Title } from "@mantine/core";
+import {
+  Anchor,
+  Center,
+  Container,
+  List,
+  ListItem,
+  Title,
+} from "@mantine/core";
 import { map } from "ramda";
 
 const LIST = [
@@ -23,15 +30,17 @@ const Home: NextPage = () => {
         <title>CSS Calculations</title>
       </Head>
       <Container>
-        <Title order={1} align={"center"} my={"lg"}>
-          CSS calc
+        <Title order={1} align={"center"} mb={"lg"}>
+          CSS Calc
         </Title>
         <Center>
           <List>
             {map(
               (item) => (
                 <ListItem key={item.value}>
-                  <Link href={item.value}>{item.label}</Link>
+                  <Link href={item.value} passHref>
+                    <Anchor>{item.label}</Anchor>
+                  </Link>
                 </ListItem>
               ),
               LIST

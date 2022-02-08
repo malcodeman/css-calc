@@ -31,7 +31,7 @@ const RemToPxConverter = () => {
 
   return (
     <Box>
-      <Title order={1} align={"center"} my={"lg"}>
+      <Title order={1} align={"center"} mb={"lg"}>
         REM to Pixel
       </Title>
       <InputWrapper id="rem" label="REM">
