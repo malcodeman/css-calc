@@ -1,4 +1,4 @@
-import { Container, Input, InputWrapper, Text, Title } from "@mantine/core";
+import { Box, Input, InputWrapper, Text, Title } from "@mantine/core";
 import { useForm } from "react-hook-form";
 import { toString } from "ramda";
 
@@ -30,8 +30,8 @@ const RemToPxConverter = () => {
   }
 
   return (
-    <Container>
-      <Title order={1} align={"center"} mb={"lg"}>
+    <Box>
+      <Title order={1} align={"center"} my={"lg"}>
         REM to Pixel
       </Title>
       <InputWrapper id="rem" label="REM">
@@ -59,7 +59,7 @@ const RemToPxConverter = () => {
           onChange={handleOnRootFontSizeChange}
         />
       </InputWrapper>
-    </Container>
+    </Box>
   );
 };
 

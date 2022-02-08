@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <title>CSS Calculations</title>
       </Head>
       <Container>
-        <Title order={1} align={"center"} mb={"lg"}>
+        <Title order={1} align={"center"} my={"lg"}>
           CSS calc
         </Title>
         <Center>
