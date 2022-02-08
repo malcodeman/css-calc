@@ -11,7 +11,7 @@ Simple unit conversion tool.
 ## Getting started
 
 ```
-git clone https://github.com/malcodeman/css-calc
+git clone https://github.com/malcodeman/css-calc.git
 cd css-calc
 yarn install && yarn start
 ```
