@@ -21,6 +21,10 @@ const LIST = [
     label: "REM to Pixel",
     value: "/rem-to-px-converter",
   },
+  {
+    label: "PT to Pixel",
+    value: "/pt-to-px-converter",
+  },
 ];
 
 const Home: NextPage = () => {
