@@ -7,21 +7,34 @@ import { toString } from "ramda";
 const defaultValues = {
   pt: "1",
   px: "1.3333333333333333",
+  dpi: "72",
 };
 
 const PtToPxConverter = () => {
-  const { register, setValue } = useForm({ defaultValues });
+  const { register, setValue, getValues } = useForm({ defaultValues });
 
   function handleOnPtChange(e: React.ChangeEvent<HTMLInputElement>) {
     const pt = parseFloat(e.target.value);
-    const px = pt * (96 / 72);
+    const dpi = parseFloat(getValues("dpi"));
+    const px = pt * (96 / dpi);
     setValue("px", toString(px));
   }
 
   function handleOnPxChange(e: React.ChangeEvent<HTMLInputElement>) {
     const px = parseFloat(e.target.value);
-    const pt = px * (72 / 96);
+    const dpi = parseFloat(getValues("dpi"));
+    const pt = px * (dpi / 96);
     setValue("pt", toString(pt));
+  }
+
+  function handleOnDpiChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const dpi = parseFloat(e.target.value);
+    const pt = parseFloat(getValues("pt"));
+    const px = parseFloat(getValues("px"));
+    setValue("pt", toString(px * (dpi / 96)));
+    setValue("px", toString(pt * (96 / dpi)));
+
+    console.log("window.devicePixelRatio", window.devicePixelRatio);
   }
 
   return (
@@ -48,6 +61,15 @@ const PtToPxConverter = () => {
             {...register("px")}
             onChange={handleOnPxChange}
             rightSection={<Text>px</Text>}
+            mb="sm"
+          />
+        </InputWrapper>
+        <InputWrapper id="dpi" label="Dots per inch">
+          <Input
+            id="dpi"
+            {...register("dpi")}
+            onChange={handleOnDpiChange}
+            rightSection={<Text>dpi</Text>}
             mb="sm"
           />
         </InputWrapper>
