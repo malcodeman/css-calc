@@ -5,26 +5,26 @@ import { useForm } from "react-hook-form";
 import { toString } from "ramda";
 
 const defaultValues = {
-  pt: "1",
-  px: "1.3333333333333333",
+  px: "1",
+  pt: "0.75",
   dpi: "72",
 };
 
-const PtToPxConverter = () => {
+const PxToPtConverter = () => {
   const { register, setValue, getValues } = useForm({ defaultValues });
-
-  function handleOnPtChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const pt = parseFloat(e.target.value);
-    const dpi = parseFloat(getValues("dpi"));
-    const px = pt * (96 / dpi);
-    setValue("px", toString(px));
-  }
 
   function handleOnPxChange(e: React.ChangeEvent<HTMLInputElement>) {
     const px = parseFloat(e.target.value);
     const dpi = parseFloat(getValues("dpi"));
     const pt = px * (dpi / 96);
     setValue("pt", toString(pt));
+  }
+
+  function handleOnPtChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const pt = parseFloat(e.target.value);
+    const dpi = parseFloat(getValues("dpi"));
+    const px = pt * (96 / dpi);
+    setValue("px", toString(px));
   }
 
   function handleOnDpiChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -38,27 +38,27 @@ const PtToPxConverter = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>PT to Pixel Convertor</title>
+        <title>Pixel to PT Convertor</title>
       </Head>
       <Box>
         <Title order={1} align="center" mb="lg">
-          PT to Pixel
+          Pixel to PT
         </Title>
-        <InputWrapper id="pt" label="PT">
-          <Input
-            id="pt"
-            {...register("pt")}
-            onChange={handleOnPtChange}
-            rightSection={<Text>pt</Text>}
-            mb="sm"
-          />
-        </InputWrapper>
         <InputWrapper id="px" label="Pixel">
           <Input
             id="px"
             {...register("px")}
             onChange={handleOnPxChange}
             rightSection={<Text>px</Text>}
+            mb="sm"
+          />
+        </InputWrapper>
+        <InputWrapper id="pt" label="PT">
+          <Input
+            id="pt"
+            {...register("pt")}
+            onChange={handleOnPtChange}
+            rightSection={<Text>pt</Text>}
             mb="sm"
           />
         </InputWrapper>
@@ -76,4 +76,4 @@ const PtToPxConverter = () => {
   );
 };
 
-export default PtToPxConverter;
+export default PxToPtConverter;

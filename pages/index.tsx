@@ -22,6 +22,10 @@ const LIST = [
     value: "/rem-to-px-converter",
   },
   {
+    label: "Pixel to PT",
+    value: "/px-to-pt-converter",
+  },
+  {
     label: "PT to Pixel",
     value: "/pt-to-px-converter",
   },
