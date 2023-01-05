@@ -29,6 +29,10 @@ const LIST = [
     label: "PT to Pixel",
     value: "/pt-to-px-converter",
   },
+  {
+    label: "Pixel to cm",
+    value: "/px-to-cm-converter",
+  },
 ];
 
 const Home: NextPage = () => {
