@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { toString } from "ramda";
 
 const defaultValues = {
-  px: "16",
   rem: "1",
+  px: "16",
   rootFontSize: "16",
 };
 
