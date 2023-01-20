@@ -41,6 +41,10 @@ const LIST = [
     label: "Pixel to mm",
     value: "/px-to-mm-converter",
   },
+  {
+    label: "mm to Pixel",
+    value: "/mm-to-px-converter",
+  },
 ];
 
 const Home: NextPage = () => {
